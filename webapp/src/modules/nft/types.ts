@@ -6,12 +6,13 @@ import { View } from '../ui/types'
 import { NFTsFetchFilters } from '../vendor/nft/types'
 import { Vendors } from '../vendor/types'
 import { SortDirection } from '../routing/types'
+import { OpenRiffNFTData } from '../vendor/open_riff/nft/types'
 
 export enum NFTSortBy {
   NAME = 'name',
   CREATED_AT = 'createdAt',
   ORDER_CREATED_AT = 'searchOrderCreatedAt',
-  PRICE = 'searchOrderPrice'
+  PRICE = 'searchOrderPrice',
 }
 
 export enum NFTCategory {
@@ -19,7 +20,7 @@ export enum NFTCategory {
   ESTATE = 'estate',
   WEARABLE = 'wearable',
   ENS = 'ens',
-  ART = 'art'
+  ART = 'art',
 }
 
 // TODO: Move this to their own vendor folders
@@ -33,7 +34,9 @@ export type SuperRareNFT = { description: string }
 export type MakersPlaceNFT = { description: string }
 export type KnownOriginNFT = { description: string; isEdition: boolean }
 
-export type Data<V extends Vendors> = V extends Vendors.DECENTRALAND
+export type Data<V extends Vendors> = V extends Vendors.OPEN_RIFF
+  ? OpenRiffNFTData
+  : V extends Vendors.DECENTRALAND
   ? DecentralandNFT
   : V extends Vendors.SUPER_RARE
   ? SuperRareNFT

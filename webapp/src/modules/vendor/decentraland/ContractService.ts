@@ -3,7 +3,7 @@ import { Network } from '../../contract/types'
 import { NFTCategory } from '../../nft/types'
 import { TransferType } from '../types'
 
-const network = process.env.REACT_APP_NETWORK! as Network
+const network = Network.ROPSTEN || (process.env.REACT_APP_NETWORK! as Network)
 
 const contractAddresses = {
   [Network.ROPSTEN]: {

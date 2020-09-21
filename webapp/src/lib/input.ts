@@ -36,10 +36,10 @@ export const useInput = (
       skip.current = false
       return
     }
-    timeout = setTimeout(() => {
+    timeout = (setTimeout(() => {
       timeout = null
       onChange(text)
-    }, ms)
+    }, ms) as unknown) as NodeJS.Timeout
   }, [text, ms, onChange])
 
   return [text, handleChange] as const

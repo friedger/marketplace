@@ -1,6 +1,8 @@
 export enum Section {
   ALL = 'all',
 
+  MONSTERS = 'monsters',
+
   LAND = 'land',
   PARCELS = 'parcels',
   ESTATES = 'estates',
@@ -26,5 +28,5 @@ export enum Section {
   WEARABLES_TIARA = 'wearables_tiara',
   WEARABLES_TOP_HEAD = 'wearables_top_head',
 
-  ENS = 'ens'
+  ENS = 'ens',
 }

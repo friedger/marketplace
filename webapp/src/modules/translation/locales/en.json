@@ -10,7 +10,7 @@
     "estate": "Estate",
     "wearable": "Wearable",
     "ens": "Name",
-    "art":"Art",
+    "art": "Art",
     "cancel": "Cancel",
     "proceed": "Proceed",
     "nft": "NFT",
@@ -65,7 +65,7 @@
     "known_origin": "KnownOrigin",
     "makers_place": "MakersPlace"
   },
-  "vendor_menu":{
+  "vendor_menu": {
     "no_assets": "No assets",
     "assets_count": "{count} {count, plural, one {asset} other {assets}}",
     "more_than_assets_count": "+{count} assets"
@@ -77,13 +77,14 @@
     "cheapest": "Cheapest"
   },
   "home_page": {
-    "title": "Decentraland Marketplace",
+    "title": "Open Riff",
     "subtitle": "Welcome to the virtual world’s one-stop-shop for the very best digital assets.",
     "get_started": "Start Browsing",
     "learn_more": "Learn More",
     "home_wearables": "Wearables",
     "home_land": "Parcels and Estates",
-    "home_ens": "Names"
+    "home_ens": "Names",
+    "home_monsters": "Monsters"
   },
   "partners_page": {
     "partners": "Partners",

@@ -41,7 +41,7 @@ const SettingsPage = (props: Props) => {
       clearTimeout(timeoutId)
     }
     setHasCopiedText(true)
-    const newTimeoutId = setTimeout(() => setHasCopiedText(false), 1200)
+    const newTimeoutId = setTimeout(() => setHasCopiedText(false), 1200) as unknown as NodeJS.Timeout
     setTimeoutId(newTimeoutId)
   }, [timeoutId])
 

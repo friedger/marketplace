@@ -7,7 +7,7 @@ import { Vendors } from '../../modules/vendor/types'
 import { SortBy } from '../../modules/routing/types'
 import { View } from '../../modules/ui/types'
 import { HomepageView } from '../../modules/ui/nft/homepage/types'
-import { Section } from '../../modules/vendor/decentraland/routing/types'
+import { Section } from '../../modules/vendor/open_riff/routing/types'
 import { Navbar } from '../Navbar'
 import { Footer } from '../Footer'
 import { Slideshow } from './Slideshow'
@@ -18,13 +18,11 @@ const HomePage = (props: Props) => {
   const { homepage, homepageLoading, onNavigate, onFetchNFTsFromRoute } = props
 
   const sections = {
-    [View.HOME_WEARABLES]: Section.WEARABLES,
-    [View.HOME_LAND]: Section.LAND,
-    [View.HOME_ENS]: Section.ENS
+    [View.HOME_MONSTERS]: Section.MONSTERS,
   }
 
   const handleGetStarted = useCallback(() => onNavigate(locations.browse()), [
-    onNavigate
+    onNavigate,
   ])
 
   const handleViewAll = useCallback(
@@ -32,7 +30,7 @@ const HomePage = (props: Props) => {
     [onNavigate]
   )
 
-  const vendor = Vendors.DECENTRALAND
+  const vendor = Vendors.OPEN_RIFF
 
   useEffect(() => {
     let view: HomepageView
@@ -44,7 +42,7 @@ const HomePage = (props: Props) => {
         view,
         sortBy: SortBy.RECENTLY_LISTED,
         page: 1,
-        onlyOnSale: true
+        onlyOnSale: true,
       })
     }
     // eslint-disable-next-line
@@ -68,7 +66,7 @@ const HomePage = (props: Props) => {
         </Hero.Actions>
       </Hero>
       <Page className="HomePage">
-        {views.map(view => (
+        {views.map((view) => (
           <Slideshow
             key={view}
             title={t(`home_page.${view}`)}

@@ -1,3 +1,4 @@
+import { services as openRiff } from './open_riff'
 import { services as decentraland } from './decentraland'
 import { services as superRare } from './super_rare'
 import { services as makersPlace } from './makers_place'
@@ -6,13 +7,21 @@ import {
   ContractService,
   NFTService,
   OrderService,
-  BidService
+  BidService,
 } from './services'
 import { Vendors } from './types'
 
 export class VendorFactory {
   static build(vendor: Vendors) {
     switch (vendor) {
+      case Vendors.OPEN_RIFF:
+        return new Vendor<Vendors.OPEN_RIFF>(
+          vendor,
+          new openRiff.ContractService(),
+          new openRiff.NFTService(),
+          new openRiff.OrderService(),
+          new openRiff.BidService()
+        )
       case Vendors.DECENTRALAND:
         return new Vendor<Vendors.DECENTRALAND>(
           vendor,

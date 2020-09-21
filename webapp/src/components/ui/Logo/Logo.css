@@ -1,0 +1,15 @@
+.dcl.logo {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background-image: url('../../../images/plaza.svg');
+  background-size: contain;
+}
+
+@media (max-width: 768px) {
+  .dcl.logo {
+    width: 32px;
+    height: 32px;
+  }
+}

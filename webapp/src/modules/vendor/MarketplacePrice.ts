@@ -40,9 +40,7 @@ export class MarketplacePrice {
   }
 
   addMaxSlippage(manaWeiAmount: string | number) {
-    return toBN(manaWeiAmount)
-      .mul(toBN(110))
-      .divRound(toBN(100)) // 10 percent increase
+    return toBN(manaWeiAmount).mul(toBN(110)).divRound(toBN(100)) // 10 percent increase
   }
 
   getPercentageIncrease(computedPrice: string, price: string) {

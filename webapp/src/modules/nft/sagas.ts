@@ -13,7 +13,7 @@ import {
   TRANSFER_NFT_REQUEST,
   TransferNFTRequestAction,
   transferNFTSuccess,
-  transferNFTFailure
+  transferNFTFailure,
 } from './actions'
 import { getAddress } from '../wallet/selectors'
 import { locations } from '../routing/locations'
@@ -32,17 +32,18 @@ function* handleFetchNFTsRequest(action: FetchNFTsRequestAction) {
   const { vendor, filters } = options
   const params = {
     ...DEFAULT_BASE_NFT_PARAMS,
-    ...action.payload.options.params
+    ...action.payload.options.params,
   }
 
   try {
+    console.log({ action })
     const { nftService } = VendorFactory.build(vendor)
 
     const [
       nfts,
       accounts,
       orders,
-      count
+      count,
     ]: AwaitFn<typeof nftService.fetch> = yield call(() =>
       // TODO: This `as any` is here because Typescript joins (&) filter types instead of adding them as an or (|)
       nftService.fetch(params, filters as any)
