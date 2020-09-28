@@ -65,6 +65,8 @@ typings/
 
 # Built files
 dist
+!docs/dist
+
 
 # Indexer generated data
 indexer/build
